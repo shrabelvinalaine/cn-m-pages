@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PG游戏 · 简明指南与访问提醒</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #f7f5f0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", "PingFang SC", sans-serif;
+      color: #2c2c2c;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #fdfcf9;
+      padding: 2.5rem 2rem;
+      border-radius: 24px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    h1 {
+      font-weight: 480;
+      font-size: 2rem;
+      letter-spacing: 0.3px;
+      margin-bottom: 0.5rem;
+      color: #1e1e1e;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #6b6b6b;
+      margin-bottom: 2rem;
+      border-left: 3px solid #d6c9b0;
+      padding-left: 1rem;
+    }
+
+    .hero-card {
+      background: #eae6de;
+      padding: 2rem 1.8rem;
+      border-radius: 18px;
+      margin-bottom: 2.2rem;
+      color: #222;
+    }
+
+    .hero-card p {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      flex: 1 1 200px;
+      background: #ffffff;
+      border: 1px solid #e6e0d4;
+      border-radius: 18px;
+      padding: 1.5rem 1.2rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    .card h3 {
+      font-weight: 450;
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+      border-bottom: 1px dashed #ccc3b0;
+      padding-bottom: 0.3rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #3e3e3e;
+    }
+
+    .note-block {
+      background: #f3efe8;
+      padding: 1.3rem 1.6rem;
+      border-radius: 14px;
+      margin: 1.8rem 0;
+      font-size: 0.95rem;
+      border-left: 5px solid #b7a78a;
+    }
+
+    .note-block strong {
+      font-weight: 500;
+    }
+
+    .faq-summary {
+      margin: 2rem 0 1.5rem;
+    }
+
+    .faq-item {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #ece6dc;
+    }
+
+    .faq-item:last-child {
+      border: none;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-a {
+      color: #4a4a4a;
+    }
+
+    .cta-natural {
+      margin-top: 2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #ddd6c9;
+    }
+
+    a {
+      color: #3b6a5e;
+      text-decoration: none;
+      border-bottom: 1px solid #b6cdc2;
+      transition: border-color 0.15s;
+    }
+
+    a:hover {
+      border-bottom-color: #2b5348;
+    }
+
+    .inline-link {
+      white-space: nowrap;
+    }
+
+    .footer-note {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #777;
+      text-align: center;
+    }
+
+    @media (max-width: 550px) {
+      body { padding: 1rem 0.8rem; }
+      .page { padding: 1.5rem 1.2rem; }
+      h1 { font-size: 1.6rem; }
+      .card-grid { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1>PG游戏 · 简明指南</h1>
+  <div class="subhead">一次克制的介绍，以及几条实在的提醒</div>
+
+  <!-- 主视觉卡片 -->
+  <div class="hero-card">
+    <p>你或许已经在不同地方见过“PG游戏”这个名字。它不是一个突然出现的符号，而是一个逐渐被更多人所知的线上游戏服务。</p>
+    <p style="margin-top: 0.8rem;">从界面到响应速度，从选品到更新节奏，它维持着一种稳定的风格。如果你恰好对轻量、直接的体验有好感，不妨花几分钟了解一下它实际的样子。</p>
+  </div>
+
+  <!-- 用途卡片 -->
+  <div class="card-grid">
+    <div class="card">
+      <h3>浏览与发现</h3>
+      <p>网站收录了多个品类的游戏内容，分类清晰，方便按兴趣筛选。没有多余的弹窗或干扰信息，页面结构偏向实用主义。</p>
+    </div>
+    <div class="card">
+      <h3>直接试玩</h3>
+      <p>多数内容支持直接加载，无需频繁注册或下载额外程序。对于只是想轻松体验的人来说，这节省了不少步骤。</p>
+    </div>
+    <div class="card">
+      <h3>信息参考</h3>
+      <p>页面提供基本的玩法描述和规则说明，适合在尝试前快速了解一款游戏的背景与核心机制。</p>
+    </div>
+  </div>
+
+  <!-- 适合人群 + 提示框 -->
+  <div class="note-block">
+    <strong>适合这样的人群：</strong> 希望快速浏览不同游戏类型的人，对界面简洁度有要求，愿意自己判断内容是否合适——而不是被算法推着走。<br>
+    <span style="display: block; margin-top: 0.8rem;"><strong>一条提醒：</strong> 任何线上游戏都伴随时间与注意力的投入。请根据自己的节奏安排，保持适度。</span>
+  </div>
+
+  <!-- 自然链接段落 -->
+  <p style="margin-bottom: 1rem;">
+    如果你之前没有接触过，可以直接打开 <a href="https://cn-m-pggames.com" class="inline-link">PG游戏</a> 的页面看看它的布局和内容风格。不需要急着做任何操作，先感受一下界面是否顺手。
+  </p>
+  <p style="margin-bottom: 1.5rem;">
+    网站本身没有过多的引导或推销语气，更像是一个陈列室。你可以自由地滑动、点击，然后决定哪些值得花时间。
+  </p>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-summary">
+    <div class="faq-item">
+      <div class="faq-q">— 这个网站需要注册吗？</div>
+      <div class="faq-a">大部分内容可直接浏览，部分功能可能要求基础注册，但流程很短。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">— 移动端体验如何？</div>
+      <div class="faq-a">页面针对手机做了适配，横竖屏切换都比较自然，按钮大小适中。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">— 内容更新频率怎样？</div>
+      <div class="faq-a">不算频繁，但每月会有少数新内容上架，老内容也会维护。</div>
+    </div>
+  </div>
+
+  <!-- 再次自然提及链接 -->
+  <div class="cta-natural">
+    <p>总的来说，<a href="https://cn-m-pggames.com">PG游戏</a> 是一个值得放进书签、偶尔看看有没有新东西的地方。它不喧哗，也不催促，只是安静地提供它那一部分内容。</p>
+  </div>
+
+  <div class="footer-note">
+    — 以上为个人视角的简要介绍，实际体验可能因人而异。
+  </div>
+
+</div>
+</body>
+</html>
